@@ -1,0 +1,39 @@
+<?php
+
+if(isset($_POST["submit"]))
+{
+
+    include_once("config.php");
+
+    $nome = $_POST["nome"];
+    $senha = $_POST["senha"];
+
+    $response = mysqli_query($conexao, " INSERT INTO  login(nome,tipo,metragem,num4,numban) VALUES('$nome','$senha')");
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="pt-br">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="form">
+            <form action="config.php" method="post">
+                <h1>Moradores</h1><br>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Inserir Nome"><br><br>
+
+                <label for="senha">Senha</label>
+                <input type="text" name="senha" id="senha" placeholder="Inserir senha"><br><br>
+
+                <a href="form1.php">Enviar</a>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
