@@ -1,17 +1,3 @@
-<?php
-
-if(isset($_POST["submit"]))
-{
-
-    include_once("config.php");
-
-    $nome = $_POST["nome"];
-    $senha = $_POST["senha"];
-
-    $response = mysqli_query($conexao, " INSERT INTO  login(nome,tipo,metragem,num4,numban) VALUES('$nome','$senha')");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
